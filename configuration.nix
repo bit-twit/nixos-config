@@ -1,6 +1,6 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# and in the NixOS manual (accessible by running â€˜nixos-helpâ€™).
 
 { config, pkgs, ... }:
 
@@ -16,7 +16,6 @@
   boot.cleanTmpDir = true;
 
   networking.hostName = "acer"; # Define your hostname.
-  networking.networkmanager.enable = true;
   networking.wireless = {
     enable = true;  # Enables wireless support via wpa_supplicant.
   };
@@ -77,7 +76,6 @@
     vim
     wget
     wirelesstools
-    wpa_supplicant_tools
     xclip
     xorg.xbacklight
     xorg.xf86inputsynaptics
@@ -113,16 +111,12 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # battery management
-  services.tpl.enable = true;
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us,ro";
   #services.xserver.xkbOptions = "";
 
   # Enable touchpad support.
-  services.xserver.libinput.enable = true;
   services.xserver.synaptics.enable = true;
   services.xserver.synaptics.twoFingerScroll = true;
   services.xserver.videoDrivers = [ "intel" ];
@@ -132,7 +126,7 @@
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.xmonad.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with â€˜passwdâ€™.
   users.extraUsers.bit-twit = {
      extraGroups = ["wheel" "disk" "audio" "video" "networkmanager" "systemd-journal" "docker"];
      isNormalUser = true;
